@@ -1,0 +1,33 @@
+//En un arreglo se tienen registradas las ventas de cinco empleados durante
+//cinco días de la semana. Se requiere determinar cuál fue la venta mayor
+//realizada.
+//Para resolver este problema se debe entender que en el arreglo al que
+//se hace referencia, los renglones definen a los empleados y las columnas
+//los días de la semana, en consecuencia, se trata de un arreglo de 5 x 5. Lo
+//que se trata de encontrar es el valor mayor almacenado en el arreglo
+
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+	int matriz1[5][5];
+	int i, j, mayor;
+	printf("Se requiere saber cual fue la venta mayor de los cinco empleados durante cinco dias de la semana\n");
+	for(i=0;i<5;i++){
+		printf("Vendedor %d \n",i+1 );
+		for(j=0;j<5;j++){
+			printf("Dia %d ", j+1);
+			scanf("%d", &matriz1[i][j]);
+		}
+		printf("\n");
+	}
+	mayor=0;
+	for(i=0;i<5;i++){
+		for(j=0;j<5;j++){
+			if (matriz1[i][j]>mayor){
+				mayor=matriz1[i][j];
+			}
+		}
+	}
+	printf("MAYOR VENTA %d", mayor);
+	return(0);
+}
